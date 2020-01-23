@@ -17,5 +17,8 @@ package viper is
   constant cnActivated   : std_ulogic := '0';
   constant cnInactivated : std_ulogic := '1';
 
+  -- FPGA Clock Speed
+  constant cFPGAClockSpeed : positive := 48000000;
+
 end viper;
 
