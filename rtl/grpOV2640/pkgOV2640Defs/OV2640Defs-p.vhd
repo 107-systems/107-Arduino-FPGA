@@ -15,4 +15,7 @@ package OV2640Defs is
   subtype  aPixelDataRange    is natural range (cPixelDataBitWidth-1) downto 0;
   subtype  aPixelData         is std_ulogic_vector(aPixelDataRange);
 
+  -- OV2640 System Clock Speed
+  constant cOV2640SystemClockSpeed : positive := 24000000;
+
 end OV2640Defs;
