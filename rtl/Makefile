@@ -7,6 +7,9 @@ analyze:
 	ghdl -a grpOV2640/unitFrequencyDivider/FrequencyDivider-Rtl-a.vhd
 	ghdl -a grpOV2640/unitOV2640/OV2640-e.vhd	
 	ghdl -a grpOV2640/unitOV2640/OV2640-Rtl-a.vhd
+	ghdl -a grpRgbLed/pkgRgbLedDefs/RgbLedDefs-p.vhd
+	ghdl -a grpRgbLed/unitRgbLed/RgbLed-e.vhd
+	ghdl -a grpRgbLed/unitRgbLed/RgbLed-Rtl-a.vhd
 	ghdl -a unitSynchronizer/Synchronizer-e.vhd
 	ghdl -a unitSynchronizer/Synchronizer-Rtl-a.vhd
 	ghdl -a unitVidor/Vidor-e.vhd
