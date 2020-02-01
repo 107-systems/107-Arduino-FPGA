@@ -11,13 +11,11 @@ library work;
 use work.viper.all;
 use work.rgbleddefs.all;
 
-entity RgbLed is
+entity RgbLedEncoder is
   port (
-    iClk      : in std_ulogic;
-    inReset   : in std_ulogic;
-    iColour   : in aRgbLedColour;
-    oRed      : out std_ulogic;
-    oGreen    : out std_ulogic;
-    oBlue     : out std_ulogic
+    iColour : in aRgbLedColour;
+    oRed    : out std_ulogic;
+    oGreen  : out std_ulogic;
+    oBlue   : out std_ulogic
   );
-end RgbLed;
+end RgbLedEncoder;
