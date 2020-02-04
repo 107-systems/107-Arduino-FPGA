@@ -4,7 +4,7 @@
 -- GNU LGPL V3.0
 ---------------------------------------------------------------
 
-architecture Rtl of Vidor is
+architecture Rtl of FpgaTop is
 
 begin
 
