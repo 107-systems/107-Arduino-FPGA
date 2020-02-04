@@ -4,9 +4,16 @@
 -- GNU LGPL V3.0
 ---------------------------------------------------------------
 
-architecture Rtl of FpgaTop is
+library ieee;
+use ieee.std_logic_1164.all;
 
-begin
+library work;
+use work.viper.all;
 
-end Rtl;
+entity ViperQuadcopterTop is
+  port (
+    iClk         : in std_ulogic;
+    inResetAsync : in std_ulogic
+  );
+end ViperQuadcopterTop;
 

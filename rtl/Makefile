@@ -12,6 +12,5 @@ analyze:
 	ghdl -a grpRgbLed/unitRgbLedEncoder/RgbLedEncoder-Rtl-a.vhd
 	ghdl -a unitSynchronizer/Synchronizer-e.vhd
 	ghdl -a unitSynchronizer/Synchronizer-Rtl-a.vhd
-	ghdl -a unitFpgaTop/FpgaTop-e.vhd
-	ghdl -a unitFpgaTop/FpgaTop-Rtl-a.vhd
-
+	ghdl -a unitViperQuadcopterTop/ViperQuadcopterTop-e.vhd
+	ghdl -a unitViperQuadcopterTop/ViperQuadcopterTop-Rtl-a.vhd
