@@ -6,7 +6,18 @@
 
 architecture Rtl of ViperQuadcopterTop is
 
+  constant cRgbLedColour : aRgbLedColour := Cyan;
+
 begin
+
+  rgb_led_encoder : entity work.RgbLedEncoder(Rtl)
+  port map
+  (
+    iColour => cRgbLedColour,
+    oRed    => oLED_R,
+    oGreen  => oLED_G,
+    oBlue   => oLED_B
+  );
 
 end Rtl;
 

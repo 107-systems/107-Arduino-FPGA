@@ -129,31 +129,53 @@ set_location_assignment PIN_E1 -to inResetAsync
 #set_location_assignment PIN_A13 -to bMKR_D[14]
   
 # Mini PCIe
-#set_location_assignment PIN_P8  -to bPEX_PIN6
-#set_location_assignment PIN_L7  -to bPEX_PIN8
-#set_location_assignment PIN_N8  -to bPEX_PIN10
-#set_location_assignment PIN_T8  -to iPEX_PIN11
-#set_location_assignment PIN_M8  -to bPEX_PIN12
-#set_location_assignment PIN_R8  -to iPEX_PIN13
-#set_location_assignment PIN_L8  -to bPEX_PIN14
-#set_location_assignment PIN_M10 -to bPEX_PIN16
-#set_location_assignment PIN_N12 -to bPEX_PIN20
-#set_location_assignment PIN_T9  -to iPEX_PIN23
-#set_location_assignment PIN_R9  -to iPEX_PIN25
-#set_location_assignment PIN_T13 -to bPEX_PIN28
-#set_location_assignment PIN_R12 -to bPEX_PIN30
-#set_location_assignment PIN_A9  -to iPEX_PIN31
-#set_location_assignment PIN_F13  -to bPEX_PIN32
-#set_location_assignment PIN_B9  -to iPEX_PIN33
-#set_location_assignment PIN_R13 -to bPEX_PIN42
-#set_location_assignment PIN_P14 -to bPEX_PIN44
-#set_location_assignment PIN_T15 -to bPEX_PIN45
-#set_location_assignment PIN_R14 -to bPEX_PIN46
-#set_location_assignment PIN_T14 -to bPEX_PIN47
-#set_location_assignment PIN_F14 -to bPEX_PIN48
-#set_location_assignment PIN_D16 -to bPEX_PIN49
-#set_location_assignment PIN_D15 -to bPEX_PIN51
-#set_location_assignment PIN_T12 -to bPEX_RST
+set_location_assignment PIN_P8   -to oLED_G         # PEX_PIN6
+set_location_assignment PIN_L7   -to oLED_R         # PEX_PIN8
+set_location_assignment PIN_N8   -to ioSDA          # PEX_PIN10
+#set_location_assignment PIN_T8  -to ...            # PEX_PIN11 (unused)
+set_location_assignment PIN_M8   -to ioSCL          # PEX_PIN12
+set_location_assignment PIN_R8   -to iDOUT6         # PEX_PIN13
+set_location_assignment PIN_L8   -to oRST           # PEX_PIN14
+set_location_assignment PIN_M10  -to oPWDN          # PEX_PIN16
+set_location_assignment PIN_N12  -to iVSYNC         # PEX_PIN20
+set_location_assignment PIN_T9   -to iPCLK          # PEX_PIN23
+set_location_assignment PIN_R9   -to iDOUT4         # PEX_PIN25
+set_location_assignment PIN_T13  -to iHREF          # PEX_PIN28
+#set_location_assignment PIN_R12 -to ...            # PEX_PIN30 (unused)
+set_location_assignment PIN_A9   -to iDOUT5         # PEX_PIN31
+#set_location_assignment PIN_F13 -to ...            # PEX_PIN32 (unused)
+set_location_assignment PIN_B9   -to iDOUT7         # PEX_PIN33
+set_location_assignment PIN_R13  -to iDOUT0         # PEX_PIN42
+set_location_assignment PIN_P14  -to iDOUT1         # PEX_PIN44
+set_location_assignment PIN_T15  -to oLED_B         # PEX_PIN45
+set_location_assignment PIN_R14  -to iDOUT2         # PEX_PIN46
+set_location_assignment PIN_T14  -to oXCLK          # PEX_PIN47
+set_location_assignment PIN_F14  -to iDOUT3         # PEX_PIN48
+set_location_assignment PIN_D16  -to iDOUT8         # PEX_PIN49
+set_location_assignment PIN_D15  -to iDOUT9         # PEX_PIN51
+#set_location_assignment PIN_T12 -to ...            # PEX_RST   (unused)
+
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to iPCLK
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to iHREF
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to iVSYNC
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to iDOUT0
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to iDOUT1
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to iDOUT2
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to iDOUT3
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to iDOUT4
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to iDOUT5
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to iDOUT6
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to iDOUT7
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to iDOUT8
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to iDOUT9
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to oXCLK
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to oRST
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to oPWDN
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to ioSDA
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to ioSCL
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to oLED_R
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to oLED_G
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to oLED_B
 
 # NINA interface
 #set_location_assignment PIN_J13 -to iWM_PIO32
