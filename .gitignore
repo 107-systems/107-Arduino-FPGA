@@ -1,4 +1,4 @@
-syn/db/
-syn/incremental_db/
-syn/output_files/
-syn/simulation/
+extras/syn/db/
+extras/syn/incremental_db/
+extras/syn/output_files/
+extras/syn/simulation/
