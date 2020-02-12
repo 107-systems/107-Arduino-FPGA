@@ -14,7 +14,7 @@ begin
       oClk <= '0';
     elsif rising_edge(iClk) then
       -- TODO
-    end if;  
+    end if;
   end process;
 
 end Rtl;

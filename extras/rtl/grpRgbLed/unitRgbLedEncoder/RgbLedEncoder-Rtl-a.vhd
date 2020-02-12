@@ -17,7 +17,7 @@ begin
         oRed   <= cInactivated;
         oGreen <= cInactivated;
         oBlue  <= cInactivated;
-      
+
       when White =>
         oRed   <= cActivated;
         oGreen <= cActivated;
@@ -42,12 +42,12 @@ begin
         oRed   <= cActivated;
         oGreen <= cActivated;
         oBlue  <= cInactivated;
-      
+
       when Cyan =>
         oRed   <= cInactivated;
         oGreen <= cActivated;
         oBlue  <= cActivated;
-      
+
       when Magenta =>
         oRed   <= cActivated;
         oGreen <= cInactivated;
@@ -60,4 +60,3 @@ begin
   end process;
 
 end Rtl;
-  

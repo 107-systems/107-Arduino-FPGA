@@ -16,10 +16,9 @@ begin
       sync_chain <= (others => gResetValue);
     elsif rising_edge(iClk) then
       sync_chain <= sync_chain(sync_chain'high-1 downto 0) & iData;
-    end if;  
+    end if;
   end process;
-  
+
   oData <= sync_chain(sync_chain'high);
 
 end Rtl;
-  
