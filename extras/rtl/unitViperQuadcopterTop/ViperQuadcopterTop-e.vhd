@@ -40,4 +40,3 @@ entity ViperQuadcopterTop is
     oLED_B       : out std_ulogic
   );
 end ViperQuadcopterTop;
-

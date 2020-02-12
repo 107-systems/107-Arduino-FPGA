@@ -9,4 +9,3 @@ architecture Rtl of OV2640 is
 begin
 
 end Rtl;
-
