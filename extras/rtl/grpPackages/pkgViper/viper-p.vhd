@@ -21,4 +21,3 @@ package viper is
   constant cFPGAClockSpeed : positive := 48000000;
 
 end viper;
-
