@@ -14,7 +14,7 @@
  * PUBLIC MEMBER FUNCTIONS
  **************************************************************************************/
 
-Status ArduinoViperFpga::begin()
+ArduinoViperFpga::Status ArduinoViperFpga::begin()
 {
   return Status::OK;
 }
