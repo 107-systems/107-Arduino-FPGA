@@ -11,10 +11,17 @@
 #include <ArduinoViperFpga.h>
 
 /**************************************************************************************
+ * EXTERN DECLARATIONS
+ **************************************************************************************/
+
+extern void enableFpgaClock(); /* Defined within MKRVIDOR4000/variant.cpp */
+
+/**************************************************************************************
  * PUBLIC MEMBER FUNCTIONS
  **************************************************************************************/
 
 ArduinoViperFpga::Status ArduinoViperFpga::begin()
 {
+  enableFpgaClock();
   return Status::OK;
 }
