@@ -115,18 +115,26 @@ set_location_assignment PIN_E1 -to inResetAsync
 #set_location_assignment PIN_G1  -to bMKR_D[0]
 #set_location_assignment PIN_N3  -to bMKR_D[1]
 #set_location_assignment PIN_P3  -to bMKR_D[2]
-#set_location_assignment PIN_R3  -to bMKR_D[3]
 #set_location_assignment PIN_T3  -to bMKR_D[4]
 #set_location_assignment PIN_T2  -to bMKR_D[5]
 #set_location_assignment PIN_G16 -to bMKR_D[6]
 #set_location_assignment PIN_G15 -to bMKR_D[7]
-#set_location_assignment PIN_F16 -to bMKR_D[8]
-#set_location_assignment PIN_F15 -to bMKR_D[9]
-#set_location_assignment PIN_C16 -to bMKR_D[10]
 #set_location_assignment PIN_C15 -to bMKR_D[11]
 #set_location_assignment PIN_B16 -to bMKR_D[12]
 #set_location_assignment PIN_C11 -to bMKR_D[13]
 #set_location_assignment PIN_A13 -to bMKR_D[14]
+
+set_location_assignment PIN_F16  -to iMOSI
+set_location_assignment PIN_F15  -to iSCK
+set_location_assignment PIN_R3   -to inCS
+set_location_assignment PIN_C16  -to oMISO
+set_location_assignment PIN_N2   -to onIRQ
+
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to iMOSI
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to iSCK
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to inCS
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to oMISO
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to onIRQ
   
 # Mini PCIe
 set_location_assignment PIN_P8   -to oLED_G         # PEX_PIN6

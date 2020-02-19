@@ -15,6 +15,12 @@ entity ViperQuadcopterTop is
   port (
     iClk         : in std_ulogic;
     inResetAsync : in std_ulogic;
+    -- MCU/FPGA SPI Interface
+    iMOSI        : in std_ulogic;
+    iSCK         : in std_ulogic;
+    inCS         : in std_ulogic;
+    oMISO        : out std_ulogic;
+    onIRQ        : out std_ulogic;
     -- OV2640
     iPCLK        : in std_ulogic;
     iHREF        : in std_ulogic;
