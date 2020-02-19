@@ -1,5 +1,7 @@
 107-Arduino-Viper-FPGA
 ======================
+[![Build Status](https://travis-ci.org/107-systems/107-Arduino-Viper-FPGA.svg?branch=master)](https://travis-ci.org/107-systems/107-Arduino-Viper-FPGA)
+
 This repository contains the VHDL code and Arduino library for the MKR VIDOR 4000 FPGA powering the Viper quadcopter.
 
 ## `extras`
