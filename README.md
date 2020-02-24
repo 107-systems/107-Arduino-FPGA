@@ -34,11 +34,11 @@ The FPGA is configured via JTAG and can be clocked by the exact same clock as th
 #### [0x00] RGB_LED_RED_INTENSITY
 This register is used to control the intensity/brightness of the **red** LED of the RGB LED located on the Vidor Camera Adapter board.
 
-| Bit   | 7   | 6   | 5   | 4   | 3   | 2   | 1   | 0   |
-|:-----:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-|       | R7  | R6  | R5  | R4  | R3  | R2  | R1  | R0  |
-|Access | R/W | R/W | R/W | R/W | R/W | R/W | R/W | R/W |
-|Reset  | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   |
+| Bit   | 7       | 6       | 5       | 4       | 3       | 2       | 1       | 0       |
+|:-----:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+|       | **R7**  | **R6**  | **R5**  | **R4**  | **R3**  | **R2**  | **R1**  | **R0**  |
+|Access | R/W     | R/W     | R/W     | R/W     | R/W     | R/W     | R/W     | R/W     |
+|Reset  | 0       | 0       | 0       | 0       | 0       | 0       | 0       | 0       |
 
 | R/G/B[7:0] | LED PWM Duty Cycle |
 |:----------:|:------------------:|
@@ -49,17 +49,17 @@ This register is used to control the intensity/brightness of the **red** LED of 
 #### [0x01] RGB_LED_GREEN_INTENSITY
 This register is used to control the intensity/brightness of the **green** LED of the RGB LED located on the Vidor Camera Adapter board.
 
-| Bit   | 7   | 6   | 5   | 4   | 3   | 2   | 1   | 0   |
-|:-----:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-|       | G7  | G6  | G5  | G4  | G3  | G2  | G1  | G0  |
-|Access | R/W | R/W | R/W | R/W | R/W | R/W | R/W | R/W |
-|Reset  | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   |
+| Bit   | 7       | 6       | 5       | 4       | 3       | 2       | 1       | 0       |
+|:-----:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+|       | **G7**  | **G6**  | **G5**  | **G4**  | **G3**  | **G2**  | **G1**  | **G0**  |
+|Access | R/W     | R/W     | R/W     | R/W     | R/W     | R/W     | R/W     | R/W     |
+|Reset  | 0       | 0       | 0       | 0       | 0       | 0       | 0       | 0       |
 
 #### [0x02] RGB_LED_BLUE_INTENSITY
 This register is used to control the intensity/brightness of the **blue** LED of the RGB LED located on the Vidor Camera Adapter board.
 
-| Bit   | 7   | 6   | 5   | 4   | 3   | 2   | 1   | 0   |
-|:-----:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-|       | B7  | B6  | B5  | B4  | B3  | B2  | B1  | B0  |
-|Access | R/W | R/W | R/W | R/W | R/W | R/W | R/W | R/W |
-|Reset  | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   |
+| Bit   | 7       | 6       | 5       | 4       | 3       | 2       | 1       | 0       |
+|:-----:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+|       | **B7**  | **B6**  | **B5**  | **B4**  | **B3**  | **B2**  | **B1**  | **B0**  |
+|Access | R/W     | R/W     | R/W     | R/W     | R/W     | R/W     | R/W     | R/W     |
+|Reset  | 0       | 0       | 0       | 0       | 0       | 0       | 0       | 0       |
