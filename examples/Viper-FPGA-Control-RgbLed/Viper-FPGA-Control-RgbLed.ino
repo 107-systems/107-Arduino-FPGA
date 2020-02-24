@@ -26,6 +26,10 @@ void setup()
   if(ArduinoViperFpga::Status::OK != fpga.begin()) {
     Serial.println("ArduinoViperFpga::begin() failed");
   }
+
+  fpga.setIntensityRed  (0);
+  fpga.setIntensityGreen(127);
+  fpga.setIntensityBlue (255);
 }
 
 void loop()
