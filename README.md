@@ -30,7 +30,7 @@ The FPGA is configured via JTAG and can be clocked by the exact same clock as th
 | 0x01    | `RGB_LED_GREEN_INTENSITY` | Control the `green` intensity of the RGB LED |
 | 0x02    | `RGB_LED_BLUE_INTENSITY`  | Control the `blue` intensity of the RGB LED  |
 
-### Register Decription
+### Register Description
 #### [0x00] RGB_LED_RED_INTENSITY
 This register is used to control the intensity/brightness of the **red** LED of the RGB LED located on the Vidor Camera Adapter board.
 
