@@ -55,7 +55,7 @@ uint8_t RegisterIo::read(Register const reg)
 
 void RegisterIo::write(Register const reg, uint8_t const reg_val)
 {
-  uint8_t const reg_addr = static_cast<uint8_t>(reg);
+  uint8_t const reg_addr = 0x80 | static_cast<uint8_t>(reg);
 
   select();
   SPI.transfer(reg_addr);

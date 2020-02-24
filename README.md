@@ -27,6 +27,17 @@ The FPGA is configured via JTAG and can be clocked by the exact same clock as th
 
 ![MKR Vidor 4000 System Architecture](extras/img/mkr-vidor-systems-architecture.png)
 
+### MCU/FPGA SPI Interface
+The following graphics show how to access the FPGA configuration and control registers from the MCU.
+
+**Read**
+
+![FPGA SPI Read](extras/img/fpga-spi-read.png)
+
+**Write**
+
+![FPGA SPI Read](extras/img/fpga-spi-write.png)
+
 ## SPI Register Interface
 ### Register Overview
 
