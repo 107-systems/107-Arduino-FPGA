@@ -34,9 +34,10 @@ static int const FPGA_CS_PIN = 3; /* Pin 3 = D3 = PA11 */
 
 enum class Register : uint8_t
 {
-  RGB_LED_RED_INTENSITY   = 0x00,
-  RGB_LED_GREEN_INTENSITY = 0x01,
-  RGB_LED_BLUE_INTENSITY  = 0x02
+  FPGA_REV_NUM            = 0x00,
+  RGB_LED_RED_INTENSITY   = 0x01,
+  RGB_LED_GREEN_INTENSITY = 0x02,
+  RGB_LED_BLUE_INTENSITY  = 0x03
 };
 
 /**************************************************************************************

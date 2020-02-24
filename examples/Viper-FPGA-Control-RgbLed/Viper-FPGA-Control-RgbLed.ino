@@ -27,6 +27,9 @@ void setup()
     Serial.println("ArduinoViperFpga::begin() failed");
   }
 
+  Serial.print("FPGA Revision: ");
+  Serial.println(fpga.getRevNum(), HEX);
+
   fpga.setIntensityRed  (0);
   fpga.setIntensityGreen(127);
   fpga.setIntensityBlue (255);

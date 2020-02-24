@@ -43,12 +43,22 @@ The following graphics show how to access the FPGA configuration and control reg
 
 | Address | Register                  | Description                                  |
 |:-------:|:-------------------------:|:--------------------------------------------:|
-| 0x00    | `RGB_LED_RED_INTENSITY`   | Control the `red` intensity of the RGB LED   |
-| 0x01    | `RGB_LED_GREEN_INTENSITY` | Control the `green` intensity of the RGB LED |
-| 0x02    | `RGB_LED_BLUE_INTENSITY`  | Control the `blue` intensity of the RGB LED  |
+| 0x00    | `FPGA_REV_NUM`            | FPGA revision number                         |
+| 0x01    | `RGB_LED_RED_INTENSITY`   | Control the `red` intensity of the RGB LED   |
+| 0x02    | `RGB_LED_GREEN_INTENSITY` | Control the `green` intensity of the RGB LED |
+| 0x03    | `RGB_LED_BLUE_INTENSITY`  | Control the `blue` intensity of the RGB LED  |
 
 ### Register Description
-#### [0x00] RGB_LED_RED_INTENSITY
+#### [0x00] FPGA_REV_NUM
+This register holds the FPGA revision number which indicates which version of the RTL code was used to synthesize the FPGA configuration file and therefore gives an indication which capabilities exist within the FPGA.
+
+| Bit   | 7              | 6              | 5              | 4              | 3              | 2              | 1              | 0              |
+|:-----:|:--------------:|:--------------:|:--------------:|:--------------:|:--------------:|:--------------:|:--------------:|:--------------:|
+|       | **REV_NUM_7**  | **REV_NUM_6**  | **REV_NUM_5**  | **REV_NUM_4**  | **REV_NUM_3**  | **REV_NUM_2**  | **REV_NUM_1**  | **REV_NUM_0**  |
+|Access | R              | R              | R              | R              | R              | R              | R              | R              |
+|Reset  | -              | -              | -              | -              | -              | -              | -              | -              |
+
+#### [0x01] RGB_LED_RED_INTENSITY
 This register is used to control the intensity/brightness of the **red** LED of the RGB LED located on the Vidor Camera Adapter board.
 
 | Bit   | 7       | 6       | 5       | 4       | 3       | 2       | 1       | 0       |
@@ -63,7 +73,7 @@ This register is used to control the intensity/brightness of the **red** LED of 
 | 127        | 50 %               |
 | 255        | 100 %              |
 
-#### [0x01] RGB_LED_GREEN_INTENSITY
+#### [0x02] RGB_LED_GREEN_INTENSITY
 This register is used to control the intensity/brightness of the **green** LED of the RGB LED located on the Vidor Camera Adapter board.
 
 | Bit   | 7       | 6       | 5       | 4       | 3       | 2       | 1       | 0       |
@@ -72,7 +82,7 @@ This register is used to control the intensity/brightness of the **green** LED o
 |Access | R/W     | R/W     | R/W     | R/W     | R/W     | R/W     | R/W     | R/W     |
 |Reset  | 0       | 0       | 0       | 0       | 0       | 0       | 0       | 0       |
 
-#### [0x02] RGB_LED_BLUE_INTENSITY
+#### [0x03] RGB_LED_BLUE_INTENSITY
 This register is used to control the intensity/brightness of the **blue** LED of the RGB LED located on the Vidor Camera Adapter board.
 
 | Bit   | 7       | 6       | 5       | 4       | 3       | 2       | 1       | 0       |

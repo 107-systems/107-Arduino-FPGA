@@ -33,6 +33,8 @@ public:
 
   Status begin();
 
+  uint8_t getRevNum();
+
   Status setIntensityRed  (uint8_t const red);
   Status setIntensityGreen(uint8_t const green);
   Status setIntensityBlue (uint8_t const blue);

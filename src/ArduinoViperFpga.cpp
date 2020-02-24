@@ -36,6 +36,11 @@ ArduinoViperFpga::Status ArduinoViperFpga::begin()
   return Status::OK;
 }
 
+uint8_t ArduinoViperFpga::getRevNum()
+{
+  return _io_reg.read(ViperFpga::Register::FPGA_REV_NUM);
+}
+
 ArduinoViperFpga::Status ArduinoViperFpga::setIntensityRed(uint8_t const red)
 {
   _io_reg.write(ViperFpga::Register::RGB_LED_RED_INTENSITY, red);
