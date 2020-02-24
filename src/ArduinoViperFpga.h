@@ -8,6 +8,12 @@
 #define ARDUINO_VIPER_FPGA_H_
 
 /**************************************************************************************
+ * INCLUDE
+ **************************************************************************************/
+
+#include "ViperFpga/RegisterIo.h"
+
+/**************************************************************************************
  * CLASS DECLARATION
  **************************************************************************************/
 
@@ -16,6 +22,9 @@ class ArduinoViperFpga
 
 public:
 
+  ArduinoViperFpga();
+
+
   enum class Status : int
   {
     OK = 0
@@ -23,6 +32,17 @@ public:
 
 
   Status begin();
+
+  uint8_t getRevNum();
+
+  Status setIntensityRed  (uint8_t const red);
+  Status setIntensityGreen(uint8_t const green);
+  Status setIntensityBlue (uint8_t const blue);
+
+
+private:
+
+  ViperFpga::RegisterIo _io_reg;
 
 };
 

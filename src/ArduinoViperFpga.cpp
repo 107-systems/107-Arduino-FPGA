@@ -17,11 +17,44 @@
 extern void enableFpgaClock(); /* Defined within MKRVIDOR4000/variant.cpp */
 
 /**************************************************************************************
+ * CTOR/DTOR
+ **************************************************************************************/
+
+ArduinoViperFpga::ArduinoViperFpga()
+: _io_reg(SPI)
+{
+
+}
+
+/**************************************************************************************
  * PUBLIC MEMBER FUNCTIONS
  **************************************************************************************/
 
 ArduinoViperFpga::Status ArduinoViperFpga::begin()
 {
   enableFpgaClock();
+  return Status::OK;
+}
+
+uint8_t ArduinoViperFpga::getRevNum()
+{
+  return _io_reg.read(ViperFpga::Register::FPGA_REV_NUM);
+}
+
+ArduinoViperFpga::Status ArduinoViperFpga::setIntensityRed(uint8_t const red)
+{
+  _io_reg.write(ViperFpga::Register::RGB_LED_RED_INTENSITY, red);
+  return Status::OK;
+}
+
+ArduinoViperFpga::Status ArduinoViperFpga::setIntensityGreen(uint8_t const green)
+{
+  _io_reg.write(ViperFpga::Register::RGB_LED_GREEN_INTENSITY, green);
+  return Status::OK;
+}
+
+ArduinoViperFpga::Status ArduinoViperFpga::setIntensityBlue(uint8_t const blue)
+{
+  _io_reg.write(ViperFpga::Register::RGB_LED_BLUE_INTENSITY, blue);
   return Status::OK;
 }
