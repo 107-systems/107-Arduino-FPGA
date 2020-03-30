@@ -22,7 +22,7 @@ class ArduinoViperFpga
 
 public:
 
-  ArduinoViperFpga();
+  ArduinoViperFpga(ViperFpga::SpiSelectFunc select, ViperFpga::SpiDeselectFunc deselect, ViperFpga::SpiTransferFunc transfer);
 
 
   enum class Status : int

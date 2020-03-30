@@ -13,7 +13,9 @@
 
 #include <stdint.h>
 
-#include <SPI.h>
+#undef max
+#undef min
+#include <functional>
 
 /**************************************************************************************
  * NAMESPACE
@@ -23,14 +25,12 @@ namespace ViperFpga
 {
 
 /**************************************************************************************
- * CONSTANTS
- **************************************************************************************/
-
-static int const FPGA_CS_PIN = 3; /* Pin 3 = D3 = PA11 */
-
-/**************************************************************************************
  * TYPEDEF
  **************************************************************************************/
+
+typedef std::function<void()>                 SpiSelectFunc;
+typedef std::function<void()>                 SpiDeselectFunc;
+typedef std::function<uint8_t(uint8_t const)> SpiTransferFunc;
 
 enum class Register : uint8_t
 {
@@ -49,9 +49,8 @@ class RegisterIo
 
 public:
 
-  RegisterIo(SPIClass & spi, int const fpga_cs_pin = FPGA_CS_PIN);
+  RegisterIo(SpiSelectFunc select, SpiDeselectFunc deselect, SpiTransferFunc transfer);
 
-  void    begin();
 
   uint8_t read (Register const reg);
   void    write(Register const reg, uint8_t const reg_val);
@@ -59,11 +58,9 @@ public:
 
 private:
 
-  SPIClass & _spi;
-  int const _fpga_cs_pin;
-
-  void select  ();
-  void deselect();
+  SpiSelectFunc _select;
+  SpiDeselectFunc _deselect;
+  SpiTransferFunc _transfer;
 
 };
 
