@@ -20,8 +20,8 @@ extern void enableFpgaClock(); /* Defined within MKRVIDOR4000/variant.cpp */
  * CTOR/DTOR
  **************************************************************************************/
 
-ArduinoViperFpga::ArduinoViperFpga()
-: _io_reg(SPI)
+ArduinoViperFpga::ArduinoViperFpga(ViperFpga::SpiSelectFunc select, ViperFpga::SpiDeselectFunc deselect, ViperFpga::SpiTransferFunc transfer)
+: _io_reg(select, deselect, transfer)
 {
 
 }
