@@ -36,7 +36,7 @@ FpgaIo::FpgaIo(SpiSelectFunc select, SpiDeselectFunc deselect, SpiTransferFunc t
 
 uint8_t FpgaIo::read(Register const reg)
 {
-  uint8_t const reg_addr = static_cast<uint8_t>(reg);
+  uint8_t const reg_addr = to_integer(reg);
 
   _select();
                           _transfer(reg_addr);
@@ -48,7 +48,7 @@ uint8_t FpgaIo::read(Register const reg)
 
 void FpgaIo::write(Register const reg, uint8_t const reg_val)
 {
-  uint8_t const reg_addr = 0x80 | static_cast<uint8_t>(reg);
+  uint8_t const reg_addr = 0x80 | to_integer(reg);
 
   _select();
   _transfer(reg_addr);

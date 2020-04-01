@@ -29,6 +29,28 @@ enum class Register : uint8_t
 };
 
 /**************************************************************************************
+ * CONVERSION FUNCTIONS
+ **************************************************************************************/
+
+template <typename Enumeration>
+constexpr auto to_integer(Enumeration const value) -> typename std::underlying_type<Enumeration>::type
+{
+  return static_cast<typename std::underlying_type<Enumeration>::type>(value);
+}
+
+template <typename Enumeration>
+constexpr auto bp(Enumeration const value) -> typename std::underlying_type<Enumeration>::type
+{
+  return to_integer(value);
+}
+
+template <typename Enumeration>
+constexpr auto bm(Enumeration const value) -> typename std::underlying_type<Enumeration>::type
+{
+    return (1 << to_integer(value));
+}
+
+/**************************************************************************************
  * NAMESPACE
  **************************************************************************************/
 
