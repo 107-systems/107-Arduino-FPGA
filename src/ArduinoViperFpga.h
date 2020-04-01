@@ -21,7 +21,7 @@ class ArduinoViperFpga
 
 public:
 
-  ArduinoViperFpga(ViperFpga::SpiSelectFunc select, ViperFpga::SpiDeselectFunc deselect, ViperFpga::SpiTransferFunc transfer);
+  ArduinoViperFpga(Fpga::SpiSelectFunc select, Fpga::SpiDeselectFunc deselect, Fpga::SpiTransferFunc transfer);
 
 
   enum class Status : int
@@ -41,7 +41,7 @@ public:
 
 private:
 
-  ViperFpga::FpgaIo _io;
+  Fpga::FpgaIo _io;
 
 };
 
