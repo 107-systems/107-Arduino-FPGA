@@ -11,7 +11,7 @@
  * INCLUDE
  **************************************************************************************/
 
-#include "ViperFpga/RegisterIo.h"
+#include "ViperFpga/FpgaIo.h"
 
 /**************************************************************************************
  * CLASS DECLARATION
@@ -42,7 +42,7 @@ public:
 
 private:
 
-  ViperFpga::RegisterIo _io_reg;
+  ViperFpga::FpgaIo _io;
 
 };
 

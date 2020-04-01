@@ -4,13 +4,18 @@
  * @license LGPL 3.0
  */
 
+#ifndef ARDUINO_VIPER_FPGA_IO_H_
+#define ARDUINO_VIPER_FPGA_IO_H_
+
 /**************************************************************************************
  * INCLUDE
  **************************************************************************************/
 
-#include "RegisterIo.h"
+#include <stdint.h>
 
-#include <Arduino.h>
+#undef max
+#undef min
+#include <functional>
 
 /**************************************************************************************
  * NAMESPACE
@@ -20,45 +25,49 @@ namespace ViperFpga
 {
 
 /**************************************************************************************
- * CTOR/DTOR
+ * TYPEDEF
  **************************************************************************************/
 
-RegisterIo::RegisterIo(SpiSelectFunc select, SpiDeselectFunc deselect, SpiTransferFunc transfer)
-: _select{select}
-, _deselect{deselect}
-, _transfer{transfer}
-{
+typedef std::function<void()>                 SpiSelectFunc;
+typedef std::function<void()>                 SpiDeselectFunc;
+typedef std::function<uint8_t(uint8_t const)> SpiTransferFunc;
 
-}
+enum class Register : uint8_t
+{
+  FPGA_REV_NUM            = 0x00,
+  RGB_LED_RED_INTENSITY   = 0x01,
+  RGB_LED_GREEN_INTENSITY = 0x02,
+  RGB_LED_BLUE_INTENSITY  = 0x03
+};
 
 /**************************************************************************************
- * PUBLIC MEMBER FUNCTIONS
+ * CLASS DECLARATION
  **************************************************************************************/
 
-uint8_t RegisterIo::read(Register const reg)
+class FpgaIo
 {
-  uint8_t const reg_addr = static_cast<uint8_t>(reg);
 
-  _select();
-                          _transfer(reg_addr);
-  uint8_t const reg_val = _transfer(0);
-  _deselect();
+public:
 
-  return reg_val;
-}
+  FpgaIo(SpiSelectFunc select, SpiDeselectFunc deselect, SpiTransferFunc transfer);
 
-void RegisterIo::write(Register const reg, uint8_t const reg_val)
-{
-  uint8_t const reg_addr = 0x80 | static_cast<uint8_t>(reg);
 
-  _select();
-  _transfer(reg_addr);
-  _transfer(reg_val);
-  _deselect();
-}
+  uint8_t read (Register const reg);
+  void    write(Register const reg, uint8_t const reg_val);
+
+
+private:
+
+  SpiSelectFunc _select;
+  SpiDeselectFunc _deselect;
+  SpiTransferFunc _transfer;
+
+};
 
 /**************************************************************************************
  * NAMESPACE
  **************************************************************************************/
 
 } /* namespace ViperFpga */
+
+#endif /* ARDUINO_VIPER_FPGA_IO_H_ */
