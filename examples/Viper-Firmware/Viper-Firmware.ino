@@ -90,7 +90,7 @@ void setup()
   pinMode(viper::BMP388_INT_PIN, INPUT_PULLUP);
   attachInterrupt(digitalPinToInterrupt(viper::BMP388_INT_PIN), viper::bmp388_onExternalEvent, FALLING);
 
-  bmp388.begin();
+  bmp388.begin(BMP388::OutputDataRate::ODR_12_5_Hz);
 }
 
 void loop()
