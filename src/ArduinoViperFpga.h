@@ -1,6 +1,5 @@
 /**
  * @brief   Arduino library containing FPGA configuration and MCU interface code for the MKR VIDOR 4000 based Viper quadcopter.
- * @author  Alexander Entinger, MSc / LXRobotics GmbH
  * @license LGPL 3.0
  */
 
@@ -11,7 +10,7 @@
  * INCLUDE
  **************************************************************************************/
 
-#include "ViperFpga/RegisterIo.h"
+#include "Fpga/FpgaIo.h"
 
 /**************************************************************************************
  * CLASS DECLARATION
@@ -22,7 +21,7 @@ class ArduinoViperFpga
 
 public:
 
-  ArduinoViperFpga(ViperFpga::SpiSelectFunc select, ViperFpga::SpiDeselectFunc deselect, ViperFpga::SpiTransferFunc transfer);
+  ArduinoViperFpga(Fpga::SpiSelectFunc select, Fpga::SpiDeselectFunc deselect, Fpga::SpiTransferFunc transfer);
 
 
   enum class Status : int
@@ -42,7 +41,7 @@ public:
 
 private:
 
-  ViperFpga::RegisterIo _io_reg;
+  Fpga::FpgaIo _io;
 
 };
 

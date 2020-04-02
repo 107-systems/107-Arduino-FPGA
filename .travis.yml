@@ -32,9 +32,11 @@ matrix:
       - install_package 'arduino:samd'
       # Install the 107-Arduino-Viper-FPGA library
       - install_library
+      - install_library https://github.com/107-systems/107-Arduino-MCP2515.git
+      - install_library https://github.com/107-systems/107-Arduino-BMP388.git
     script:
       # Compile all example sketches
-      - build_sketch "${SKETCHBOOK_FOLDER}/libraries/107-Arduino-Viper-FPGA/examples" 'arduino:samd:mkrvidor4000' 'false' 'newest'
+      - build_sketch "${SKETCHBOOK_FOLDER}/libraries/107-Arduino-Viper/examples" 'arduino:samd:mkrvidor4000' 'false' 'newest'
     after_script:
       # Print a tab separated report of all sketch verification results to the log
       - display_report

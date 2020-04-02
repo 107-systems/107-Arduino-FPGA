@@ -1,64 +1,53 @@
-/**
- * @brief   Arduino library containing FPGA configuration and MCU interface code for the MKR VIDOR 4000 based Viper quadcopter.
- * @author  Alexander Entinger, MSc / LXRobotics GmbH
- * @license LGPL 3.0
+/* This sketch contains the firmware for the MKR VIDOR 4000
+ * based quadcopter flight controller codename 'Viper'.
  */
 
 /**************************************************************************************
  * INCLUDE
  **************************************************************************************/
 
-#include "RegisterIo.h"
+#include "ViperBMP388Util.h"
 
 #include <Arduino.h>
 
+#include <ArduinoBMP388.h>
+
+#include "ViperConst.h"
+
+/**************************************************************************************
+ * EXTERN DECLARATION
+ **************************************************************************************/
+
+extern ArduinoBMP388 bmp388;
+
 /**************************************************************************************
  * NAMESPACE
  **************************************************************************************/
 
-namespace ViperFpga
+namespace viper
 {
 
 /**************************************************************************************
- * CTOR/DTOR
+ * FUNCTION DECLARATION
  **************************************************************************************/
 
-RegisterIo::RegisterIo(SpiSelectFunc select, SpiDeselectFunc deselect, SpiTransferFunc transfer)
-: _select{select}
-, _deselect{deselect}
-, _transfer{transfer}
+void bmp388_spi_select()
 {
-
+  digitalWrite(BMP388_CS_PIN, LOW);
 }
 
-/**************************************************************************************
- * PUBLIC MEMBER FUNCTIONS
- **************************************************************************************/
-
-uint8_t RegisterIo::read(Register const reg)
+void bmp388_spi_deselect()
 {
-  uint8_t const reg_addr = static_cast<uint8_t>(reg);
-
-  _select();
-                          _transfer(reg_addr);
-  uint8_t const reg_val = _transfer(0);
-  _deselect();
-
-  return reg_val;
+  digitalWrite(BMP388_CS_PIN, HIGH);
 }
 
-void RegisterIo::write(Register const reg, uint8_t const reg_val)
+void bmp388_onExternalEvent()
 {
-  uint8_t const reg_addr = 0x80 | static_cast<uint8_t>(reg);
-
-  _select();
-  _transfer(reg_addr);
-  _transfer(reg_val);
-  _deselect();
+  bmp388.onExternalEventHandler();
 }
 
 /**************************************************************************************
  * NAMESPACE
  **************************************************************************************/
 
-} /* namespace ViperFpga */
+} /* viper */
