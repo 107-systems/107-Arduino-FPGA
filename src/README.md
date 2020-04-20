@@ -4,11 +4,13 @@
 ## MCU/FPGA System Architecture
 The FPGA is configured via JTAG and can be clocked by the exact same clock as the MCU (48 MHz). The original MKR Vidor 4000 core performs the communication with the FPGA via bit-banging the JTAG interface (which is slow). To overcome this limitation the communication between MCU and FPGA in the Viper Quadcopter shall be implemented using the other available SPI interface. The MCU is the master while the FPGA is the slave. Events can be communicated by the FPGA to the MCU by producing a falling edge on the nIRQ pin.
 
-![MKR Vidor 4000 System Architecture](../extras/img/mkr-vidor-systems-architecture.png)
+<p align="center">
+<img src="../extras/img/mkr-vidor-systems-architecture.png" width="75%">
+</p>
 
 ### How-to-upload custom FPGA bitstream + sketch
 #### Generate `bitstream.ttf`
-The bitstream itself is provided as a [Tabular Text File](https://www.intel.com/content/www/us/en/programmable/quartushelp/13.0/mergedProjects/reference/glossary/def_ttf.htm) (*.ttf) which can be generated via Quartus after successfuly synthesis using the following steps:
+The bitstream itself is provided as a [Tabular Text File](https://www.intel.com/content/www/us/en/programmable/quartushelp/13.0/mergedProjects/reference/glossary/def_ttf.htm) (*.ttf) which can be generated via Quartus after successful synthesis using the following steps:
 
 1) Perform synthesis run
 2) Menu **File -> Convert Programming File**
@@ -36,13 +38,13 @@ MEMORY
 /* ... */
 .fpga_bitstream_section :
 {
-	KEEP(*(.fpga_bitstream_signature))
-	KEEP(*(.fpga_bitstream))
+    KEEP(*(.fpga_bitstream_signature))
+    KEEP(*(.fpga_bitstream))
 } > FLASH_FPGA
 ```
 
 #### Generate `bitstream_signature.h`
-The bitstream signature is used by the bootloader to determine which address the FPGA configuration should be loaded too as well to verify wether or not the the FPGA image needs to be updated at all. The structure of the bitstream signature looks like this:
+The bitstream signature is used by the bootloader to determine which address the FPGA configuration should be loaded too as well to verify whether or not the the FPGA image needs to be updated at all. The structure of the bitstream signature looks like this:
 ```C++
 typedef struct
 {
@@ -76,11 +78,15 @@ The following graphics show how to access the FPGA configuration and control reg
 
 **Read**
 
-![FPGA SPI Read](../extras/img/fpga-spi-read.png)
+<p align="center">
+<img src="../extras/img/fpga-spi-read.png" width="75%">
+</p>
 
 **Write**
 
-![FPGA SPI Read](../extras/img/fpga-spi-write.png)
+<p align="center">
+<img src="../extras/img/fpga-spi-write.png" width="75%">
+</p>
 
 ## SPI Register Interface
 ### Register Overview
