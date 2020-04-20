@@ -1,4 +1,4 @@
-`ArduinoViperFpgas`
+`ArduinoViperFpga`
 ==================
 
 ## MCU/FPGA System Architecture
