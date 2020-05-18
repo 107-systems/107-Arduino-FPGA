@@ -26,10 +26,10 @@ begin
   syspll_inst : entity work.syspll(SYN)
   port map
   (
-		areset	 => inResetAsync,
-		inclk0	 => iClk,
-		c0	     => pll_clock_c0_192MHz,
-		locked	 => pll_locked
-	);
+    areset => inResetAsync,
+    inclk0 => iClk,
+    c0     => pll_clock_c0_192MHz,
+    locked => pll_locked
+  );
 
 end Rtl;
