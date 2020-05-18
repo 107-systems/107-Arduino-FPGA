@@ -125,4 +125,5 @@ set_global_assignment -name VHDL_FILE "../rtl/grpRgbLed/unitRgbLedEncoder/RgbLed
 set_global_assignment -name VHDL_FILE "../rtl/grpPackages/pkgViper/viper-p.vhd"
 set_global_assignment -name VHDL_FILE "../rtl/unitViperQuadcopterTop/ViperQuadcopterTop-e.vhd"
 set_global_assignment -name VHDL_FILE "../rtl/unitViperQuadcopterTop/ViperQuadcopterTop-Rtl-a.vhd"
+set_global_assignment -name QIP_FILE ../ip/syspll.qip
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
