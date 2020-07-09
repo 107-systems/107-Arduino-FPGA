@@ -2,6 +2,10 @@
 ===================
 [![Build Status](https://travis-ci.org/107-systems/107-Arduino-Viper.svg?branch=master)](https://travis-ci.org/107-systems/107-Arduino-Viper)
 
+<p align="center"> 
+  <a href="https://github.com/107-systems/107-Arduino-Viper"><img src="extras/logo/viper-logo.jpg" width="40%"></a>
+</p>
+
 ## Organisation Overview
 #### :floppy_disk: Software
 * [`107-Arduino-MCP2515`](https://github.com/107-systems/107-Arduino-MCP2515) Arduino library for interfacing with a MCP2515 CAN transceiver via **SPI** in order to transmit/receive CAN frames.
