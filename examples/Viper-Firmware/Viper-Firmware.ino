@@ -23,7 +23,7 @@
  **************************************************************************************/
 
 uint8_t spi_transfer                 (uint8_t const);
-void    mcp2515_onReceiveBufferFull  (uint32_t const, uint8_t const *, uint8_t const);
+void    mcp2515_onReceiveBufferFull  (uint32_t const, uint32_t const, uint8_t const *, uint8_t const);
 void    mcp2515_onTransmitBufferEmpty(ArduinoMCP2515 *);
 void    bmp388_onSensorData          (float const pressure_hpa, float const temperature_deg);
 
@@ -38,6 +38,7 @@ ArduinoViperFpga fpga(viper::fpga_spi_select,
 ArduinoMCP2515 mcp2515(viper::mcp2515_spi_select,
                        viper::mcp2515_spi_deselect,
                        spi_transfer,
+                       micros,
                        mcp2515_onReceiveBufferFull,
                        mcp2515_onTransmitBufferEmpty);
 
@@ -107,7 +108,7 @@ uint8_t spi_transfer(uint8_t const data)
   return SPI.transfer(data);
 }
 
-void mcp2515_onReceiveBufferFull(uint32_t const id, uint8_t const * data, uint8_t const len)
+void mcp2515_onReceiveBufferFull(uint32_t const timestamp_usec, uint32_t const id, uint8_t const * data, uint8_t const len)
 {
   /* TODO */
 }
