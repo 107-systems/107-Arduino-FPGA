@@ -12,6 +12,8 @@ analyze:
 	ghdl -a grpRgbLed/unitRgbLedEncoder/RgbLedEncoder-Rtl-a.vhd
 	ghdl -a unitSynchronizer/Synchronizer-e.vhd
 	ghdl -a unitSynchronizer/Synchronizer-Rtl-a.vhd
+	ghdl -a grpSpi/unitSpiSynchronizer/SpiSynchronizer-e.vhd
+	ghdl -a grpSpi/unitSpiSynchronizer/SpiSynchronizer-Rtl-a.vhd
 	ghdl -a -P=altera_mf/ ../ip/syspll.vhd
 	ghdl -a unitViperQuadcopterTop/ViperQuadcopterTop-e.vhd
 	ghdl -a unitViperQuadcopterTop/ViperQuadcopterTop-Rtl-a.vhd
