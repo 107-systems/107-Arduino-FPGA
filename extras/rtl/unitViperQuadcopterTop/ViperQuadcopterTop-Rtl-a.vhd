@@ -12,6 +12,11 @@ architecture Rtl of ViperQuadcopterTop is
   signal pll_clock_c0_192MHz : std_ulogic;
   signal pll_locked          : std_ulogic;
 
+  -- SPI sync signals
+  signal iMosiSync : std_ulogic;
+  signal iSckSync : std_ulogic;
+  signal inCsSync : std_ulogic;
+  
 begin
 
   rgb_led_encoder : entity work.RgbLedEncoder(Rtl)
@@ -30,6 +35,19 @@ begin
     inclk0 => iClk,
     c0     => pll_clock_c0_192MHz,
     locked => pll_locked
+  );
+
+  spisync_inst : entity work.SpiSynchronizer(Rtl)
+  port map
+  (
+      iClk       => iClk,
+      inReset    => pll_locked,
+      iMosiAsync => iMOSI,
+      iSckAsync  => iSCK,
+      inCsAsync  => inCS,
+      oMosiSync  => iMosiSync,
+      oSckSync   => iSckSync,
+      onCsSync   => inCsSync
   );
 
 end Rtl;
