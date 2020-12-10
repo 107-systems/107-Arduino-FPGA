@@ -51,4 +51,15 @@ begin
       onCsSync   => inCsSync
   );
 
+  spislave_inst : entity work.SpiSlave(Rtl)
+  port map
+  (
+    iClk    => iClk,
+    inReset => pll_locked,
+    iMOSI   => iMosiSync,
+    iSCK    => iSckSync,
+    inCS    => inCsSync,
+    oMISO   => oMISO
+  );
+
 end Rtl;
