@@ -41,7 +41,7 @@ begin
   spisync_inst : entity work.SpiSynchronizer(Rtl)
   port map
   (
-      iClk       => iClk,
+      iClk       => pll_clock_c0_192MHz,
       inReset    => pll_locked,
       iMosiAsync => iMOSI,
       iSckAsync  => iSCK,
@@ -54,7 +54,7 @@ begin
   spislave_inst : entity work.SpiSlave(Rtl)
   port map
   (
-    iClk    => iClk,
+    iClk    => pll_clock_c0_192MHz,
     inReset => pll_locked,
     iMOSI   => iMosiSync,
     iSCK    => iSckSync,
