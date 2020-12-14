@@ -119,6 +119,12 @@ set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -rise
 set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -fall
 set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -rise
 set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -fall
+set_global_assignment -name VHDL_FILE "../rtl/unitSynchronizer/Synchronizer-e.vhd"
+set_global_assignment -name VHDL_FILE "../rtl/unitSynchronizer/Synchronizer-Rtl-a.vhd"
+set_global_assignment -name VHDL_FILE "../rtl/grpSpi/unitSpiSlave/SpiSlave-Rtl-a.vhd"
+set_global_assignment -name VHDL_FILE "../rtl/grpSpi/unitSpiSlave/SpiSlave-e.vhd"
+set_global_assignment -name VHDL_FILE "../rtl/grpSpi/unitSpiSynchronizer/SpiSynchronizer-Rtl-a.vhd"
+set_global_assignment -name VHDL_FILE "../rtl/grpSpi/unitSpiSynchronizer/SpiSynchronizer-e.vhd"
 set_global_assignment -name VHDL_FILE "../rtl/grpRgbLed/pkgRgbLedDefs/RgbLedDefs-p.vhd"
 set_global_assignment -name VHDL_FILE "../rtl/grpRgbLed/unitRgbLedEncoder/RgbLedEncoder-e.vhd"
 set_global_assignment -name VHDL_FILE "../rtl/grpRgbLed/unitRgbLedEncoder/RgbLedEncoder-Rtl-a.vhd"
