@@ -45,7 +45,7 @@ The bitstream itself is provided as a [Tabular Text File](https://www.intel.com/
 6) Generate `bitstream.ttf` via left-click on **Generate**
 7) Copy `bitstream.ttf` to `src/Fpga/bitstream.ttf`
 
-![MKR Vidor 4000 Generate Bitstream via Quartus](../extras/img/mkr-vidor-generate-bitstream.png)
+![MKR Vidor 4000 Generate Bitstream via Quartus](extras/img/mkr-vidor-generate-bitstream.png)
 
 The bitstream is included into the compiled firmware binary by enforcing its placement at a specially declared section `.fpga_bitstream` which is declared to start at `0x0004 0000` which is
 ```C++
@@ -104,13 +104,13 @@ The following graphics show how to access the FPGA configuration and control reg
 **Read**
 
 <p align="center">
-<img src="../extras/img/fpga-spi-read.png" width="75%">
+<img src="extras/img/fpga-spi-read.png" width="75%">
 </p>
 
 **Write**
 
 <p align="center">
-<img src="../extras/img/fpga-spi-write.png" width="75%">
+<img src="extras/img/fpga-spi-write.png" width="75%">
 </p>
 
 ## SPI Register Interface
